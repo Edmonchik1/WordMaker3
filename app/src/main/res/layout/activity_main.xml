@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg_cartoon"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Top bar with level and gems -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/levelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level 1"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="casual" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_dimond"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Gem" />
+
+        <TextView
+            android:id="@+id/gemCountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x5"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="casual" />
+    </LinearLayout>
+
+    <!-- Puzzle grid -->
+    <GridLayout
+        android:id="@+id/puzzleGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topBar"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"
+        android:alignmentMode="alignMargins"
+        android:useDefaultMargins="true" />
+
+    <!-- Current word display -->
+    <TextView
+        android:id="@+id/currentWord"
+        android:layout_below="@id/puzzleGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual" />
+
+    <!-- Letter buttons -->
+    <GridLayout
+        android:id="@+id/letterGrid"
+        android:layout_below="@id/currentWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="6"
+        android:clickable="true"
+        android:focusable="true"
+        android:alignmentMode="alignMargins"
+        android:useDefaultMargins="true"
+        android:layout_marginTop="12dp" />
+
+    <!-- Control buttons -->
+    <LinearLayout
+        android:id="@+id/controlButtons"
+        android:layout_below="@id/letterGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/submitButton"
+            android:text="Submit"
+            android:onClick="onSubmitWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFCC00"
+            android:textStyle="bold"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:text="Clear"
+            android:onClick="onClearWord"
+            android:layout_marginStart="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF6666"
+            android:textStyle="bold"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/restartButton"
+            android:text="Restart"
+            android:onClick="onRestartLevel"
+            android:layout_marginStart="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#66BB6A"
+            android:textStyle="bold"
+            android:padding="10dp" />
+    </LinearLayout>
+
+    <!-- Word Library Button -->
+    <Button
+        android:id="@+id/wordLibraryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Word Library"
+        android:layout_below="@id/controlButtons"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#66BBFF"
+        android:textStyle="bold"
+        android:padding="10dp" />
+
+    <!-- Level select button -->
+    <Button
+        android:id="@+id/levelSelectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Level"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp" />
+</RelativeLayout>
